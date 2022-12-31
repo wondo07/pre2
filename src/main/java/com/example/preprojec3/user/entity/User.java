@@ -76,11 +76,11 @@ public class User {
     List<Question> questions = new ArrayList<>();
 
     @OrderBy("questionCommentId")
-    @OneToMany(mappedBy = "questioncomment")
+    @OneToMany(mappedBy = "user")
     List<QuestionComment> questionComments = new ArrayList<>();
 
     @OrderBy("questionVoteId")
-    @OneToMany(mappedBy = "questionvote")
+    @OneToMany(mappedBy = "user")
     List<QuestionVote> questionVotes = new ArrayList<>();
 
 

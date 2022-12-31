@@ -53,11 +53,11 @@ public class Question {
     @Setter
     private User user;
 
-    @OneToMany(mappedBy = "questioncomment")
+    @OneToMany(mappedBy = "question")
     @OrderBy("questionCommentId")
     List<QuestionComment> questionComments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "questionvote")
+    @OneToMany(mappedBy = "question")
     @OrderBy("questionVoteId")
     List<QuestionVote> questionVotes = new ArrayList<>();
 
