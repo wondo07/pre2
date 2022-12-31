@@ -1,2 +1,4 @@
-package com.example.preprojec3.question.controller;public class QuestionVoteController {
+package com.example.preprojec3.question.controller;
+
+public class QuestionVoteController {
 }
