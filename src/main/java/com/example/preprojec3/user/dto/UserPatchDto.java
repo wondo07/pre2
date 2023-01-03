@@ -13,6 +13,6 @@ public class UserPatchDto {
 
 
     private String password;
-    private String displayname;
+    private String displayName;
     private UserStatus userNotice;
 }

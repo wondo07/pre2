@@ -3,27 +3,20 @@ package com.example.preprojec3.user.service;
 import com.example.preprojec3.Exception.BusinessException;
 import com.example.preprojec3.Exception.ErrorCode;
 import com.example.preprojec3.dto.LoginType;
-import com.example.preprojec3.dto.SingleResponseDto;
 import com.example.preprojec3.dto.UserStatus;
-import com.example.preprojec3.user.dto.UserPatchDto;
 import com.example.preprojec3.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.example.preprojec3.user.entity.User;
-import org.springframework.util.function.SingletonSupplier;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiec {
+public class UserService {
 
     private final UserRepository userRepository;
 
@@ -68,8 +61,8 @@ public class UserServiec {
 
     public User patch(User user, Long userId) {
         User findUser = verifiedUser(userId);
-        Optional.ofNullable(user.getDisplayname())
-                 .ifPresent(name -> findUser.setDisplayname(name));
+        Optional.ofNullable(user.getDisplayName())
+                 .ifPresent(name -> findUser.setDisplayName(name));
         Optional.ofNullable(user.getUserStatus())
                 .ifPresent(status -> findUser.setUserStatus(status));
         Optional.ofNullable(user.getPassword())

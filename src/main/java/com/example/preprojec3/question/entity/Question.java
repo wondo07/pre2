@@ -33,11 +33,18 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long questionId;
     @Column(nullable = false)
+    @Setter
     private String title;
     @Column(nullable = false)
+    @Setter
     private String body;
     @Column(nullable = false)
+    @Setter
     private QuestionStatus questionStatus;
+
+    @Column(nullable = false)
+    @Setter
+    private int viewCounting;
 
     @Column(nullable = false, insertable = false, updatable = false,
             columnDefinition = "datetime default CURRENT_TIMESTAMP")
@@ -53,11 +60,11 @@ public class Question {
     @Setter
     private User user;
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
     @OrderBy("questionCommentId")
     List<QuestionComment> questionComments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "question")
+    @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
     @OrderBy("questionVoteId")
     List<QuestionVote> questionVotes = new ArrayList<>();
 

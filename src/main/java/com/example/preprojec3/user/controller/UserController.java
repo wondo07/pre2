@@ -7,8 +7,7 @@ import com.example.preprojec3.user.dto.UserPatchDto;
 import com.example.preprojec3.user.dto.UserPostDto;
 import com.example.preprojec3.user.dto.UserResponseDto;
 import com.example.preprojec3.user.mapper.UserMapper;
-import com.example.preprojec3.user.service.UserServiec;
-import lombok.Getter;
+import com.example.preprojec3.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 
 import com.example.preprojec3.user.entity.User;
@@ -25,11 +24,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserServiec userServiec;
+    private final UserService userServiec;
     private final UserMapper userMapper;
 
     @PostMapping
@@ -72,7 +71,7 @@ public class UserController {
            );
     }
 
-    @PatchMapping("/userId")
+    @PatchMapping("/{userId}")
     public ResponseEntity userPatch(@PathVariable Long userId,
                                     @RequestBody UserPatchDto userPatchDto){
            User user = userMapper.UserPatchDtoToEntity(userPatchDto);

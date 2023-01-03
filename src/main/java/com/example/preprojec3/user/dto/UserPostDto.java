@@ -11,6 +11,6 @@ public class UserPostDto {
 
     private String email;
     private String password;
-    private String displayname;
+    private String displayName;
     private Boolean emailNotice;
 }

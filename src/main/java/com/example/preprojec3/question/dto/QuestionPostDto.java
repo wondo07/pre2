@@ -9,6 +9,7 @@ import lombok.*;
 @ToString
 public class QuestionPostDto {
 
+    private Long userId;
     private String title;
     private String body;
 

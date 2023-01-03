@@ -44,7 +44,7 @@ public class User {
 
     @Column(nullable = false)
     @Setter
-    private String displayname;
+    private String displayName;
 
     @Column(nullable = false)
     @Setter
@@ -72,15 +72,15 @@ public class User {
     private LocalDateTime updateAt;
 
     @OrderBy("questionId")
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     List<Question> questions = new ArrayList<>();
 
     @OrderBy("questionCommentId")
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     List<QuestionComment> questionComments = new ArrayList<>();
 
     @OrderBy("questionVoteId")
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade = CascadeType.REMOVE)
     List<QuestionVote> questionVotes = new ArrayList<>();
 
 

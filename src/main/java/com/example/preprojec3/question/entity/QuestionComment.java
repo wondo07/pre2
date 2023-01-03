@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
         @Index(columnList = "updateAt")
 })
 @EntityListeners(AuditingEntityListener.class)
-@Entity
+@Entity(name="QUESTION_COMMENT")
 @NoArgsConstructor
 public class QuestionComment {
 
@@ -28,6 +28,7 @@ public class QuestionComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long questionCommentId;
     @Column(nullable = false)
+    @Setter
     private String comment;
     @Column(nullable = false, insertable = false, updatable = false,
             columnDefinition = "datetime default CURRENT_TIMESTAMP")

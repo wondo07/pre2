@@ -2,15 +2,12 @@ package com.example.preprojec3.question.dto;
 
 
 import com.example.preprojec3.dto.QuestionStatus;
+import com.example.preprojec3.question.entity.QuestionComment;
+import com.example.preprojec3.question.entity.QuestionVote;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,9 +23,15 @@ public class QuestionResponseDto {
 
     private String body;
 
+    private int viewCounting;
+
     private QuestionStatus questionStatus;
 
     private LocalDateTime createAt;
 
     private LocalDateTime updateAt;
+
+    private List<QuestionVoteResponseDto> questionVotes;
+
+    private List<QuestionCommentResponseDto> questionComments;
 }

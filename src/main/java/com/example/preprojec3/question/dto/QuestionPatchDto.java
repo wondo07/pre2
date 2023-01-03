@@ -13,5 +13,5 @@ public class QuestionPatchDto {
     private String title;
     private String body;
     private String questionStatus;
-
+    private Long userId;
 }

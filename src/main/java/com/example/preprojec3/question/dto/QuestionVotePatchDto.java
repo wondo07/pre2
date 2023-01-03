@@ -12,7 +12,6 @@ import lombok.*;
 public class QuestionVotePatchDto {
 
     private String voteStatus;
-    private Long userId;
-    private Long questionId;
+
 
 }

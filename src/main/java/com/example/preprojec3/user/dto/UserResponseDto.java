@@ -3,12 +3,15 @@ package com.example.preprojec3.user.dto;
 
 import com.example.preprojec3.dto.LoginType;
 import com.example.preprojec3.dto.UserStatus;
+import com.example.preprojec3.question.dto.QuestionResponseDto;
+import com.example.preprojec3.question.entity.Question;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +27,7 @@ public class UserResponseDto {
 
     private String password;
 
-    private String displayname;
+    private String displayName;
 
     private boolean emailNotice;
 
@@ -36,5 +39,6 @@ public class UserResponseDto {
 
     private LocalDateTime updateAt;
 
+    private List<QuestionResponseDto> questions;
 
 }
